@@ -1,5 +1,5 @@
 <?php
-include("../navigation-sub.php");
+include("../navigation.php");
 ?>
 
 <div class="container-fluid">

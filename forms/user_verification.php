@@ -1,4 +1,6 @@
-<?php include('./user_activation.php'); ?>
+<?php include('./user_activation.php');
+$env = parse_ini_file('../.env');
+?>
 
 <!doctype html>
 <html lang="en">
@@ -26,7 +28,7 @@
                 <?php echo $activation_error; ?>
             </div>
             <p class="lead">If user account is verified then click on the following button to login.</p>
-            <a class="btn btn-lg btn-success" href="http://localhost/moodle/energia/forms/kirjaudu.php"
+            <a class="btn btn-lg btn-success" href="http://<?=$env['domain'] ?>/<?=$env['app_dir'] ?>/forms/login.php"
                >Click to Login
             </a>
         </div>
