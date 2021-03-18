@@ -1,39 +1,41 @@
 <?php
-//include('tietokanta.php');
+$env = parse_ini_file('../.env');
 require_once '../vendor/autoload.php';
 global $emailErr;
 if (isset($_POST["submit"])) {
 
-    $kay_posti = $yhteys->real_escape_string(strip_tags($_POST["kay_posti"]));
-    $kay_posti = filter_var($kay_posti, FILTER_SANITIZE_EMAIL);
-    $query = "SELECT kayttaja_sposti FROM kayttajat WHERE kayttaja_sposti='$kay_posti'";
-    $tulokset = $yhteys->query($query);
-    if ($tulokset->num_rows == 0) {
-
+    $email = $connect->real_escape_string(strip_tags($_POST["email"]));
+    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+    $query = "SELECT email, id FROM users WHERE email='$email'";
+    $result = $connect->query($query);
+    if ($result->num_rows == 0) {
+        
         $resetErr['emailErr'] = ' <div class="alert alert-danger" role="alert">
                        User with email is not exist!
                     </div>';
     } else {
         // Generate random activation token
-        $token_salasana = md5(rand() . time());
-        $rek_Query = "UPDATE kayttajat SET token_salasana='$token_salasana' WHERE kayttaja_sposti='$kay_posti'";
-        $tulokset = $yhteys->query($rek_Query);
-        if ($tulokset) {
+        $row = $result->fetch_assoc();
+        $user_id=$row['id'];
+        $token_password = md5(rand() . time());
+        $token_Query = "UPDATE users_tokens SET token_password='$token_password' WHERE user_id='$user_id'";
+        $result = $connect->query($token_Query);
+        if ($result) {
             // Create the Transport
             $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl'))
-                ->setUsername('paras.testaaja@gmail.com')
-                ->setPassword('FIukr531SIM');
+                ->setUsername($env['swift_username'])
+                ->setPassword($env['swift_password']);
 
             // Create the Mailer using your created Transport
             $mailer = new Swift_Mailer($transport);
 
             // Create a message
             $msg = 'Click on the link to reset your password. <br><br>
-                  <a href="http://localhost/moodle/puutarhakauppa_neilikka/change_password_form.php?token_salasana=' . $token_salasana . '"> Click here to verify email</a>
+            <a href="http://'.$env['domain'].'/' . $env['app_dir'] . '/forms/change_password_form.php?token_password=' . $token_password . '"> Click here to reset your password</a>
                 ';
             $message = (new Swift_Message('Salasanan resetointi'))
-                ->setFrom([$kay_posti =>  'Neilikka '])
-                ->setTo($kay_posti)
+                ->setFrom([$email =>  'Energia '])
+                ->setTo($email)
                 ->addPart($msg, "text/html")
                 ->setBody('Hello! User');
 

@@ -3,7 +3,7 @@ $resetErr = [
     "emailErr" => "", "emailSent" => "", "emailSentErr" => "",
     "error" => ""
 ];
-include("../navigation-sub.php");
+include("../navigation.php");
 include("reset_password_handler.php"); 
 
 ?>
@@ -30,7 +30,7 @@ include("reset_password_handler.php");
                         <?php echo $resetErr['error']; ?>
                         <div class="form-group">
                         <label>Sähköposti</label>
-                            <input type="email" class="form-control" name="kay_posti" id="kay_posti" />
+                            <input type="email" class="form-control" name="email" id="email" />
 
                         </div>
                     
