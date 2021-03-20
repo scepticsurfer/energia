@@ -2,7 +2,7 @@
 include ("../navigation.php");
 
 if (isset($_SESSION['loggedIn'])) {
-    echo 'you are logged in';
+    echo 'This is trainer page';
 } 
 
 include ("../footer.php");

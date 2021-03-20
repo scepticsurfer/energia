@@ -22,6 +22,7 @@ if (isset($_COOKIE['user_id'])) {
       $_SESSION['loggedIn'] = TRUE;
       $_SESSION['user_id'] = $_COOKIE['user_id'];
       $_SESSION['admin'] = $row['admin'];
+      $_SESSION['trainer'] = $row['trainer'];
       $_SESSION['last_activity'] = time();
     }
   }
@@ -66,27 +67,31 @@ if (isset($_COOKIE['user_id'])) {
       <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
         <div class="navbar-nav">
           <a <?php if ($address == "company") echo $active; ?> 
-              href="/<?= $env['app_dir'] ?>/company/company.php" 
-              class="nav-item nav-link">MEISTÄ
+             href="/<?= $env['app_dir'] ?>/company/company.php" 
+             class="nav-item nav-link">MEISTÄ
           </a>
           <a <?php if ($address == "trainers") echo $active; ?>
-              href="/<?= $env['app_dir'] ?>/trainers/trainers.php"
-              class="nav-item nav-link">OHJAAJAT
+             href="/<?= $env['app_dir'] ?>/trainers/trainers.php" 
+             class="nav-item nav-link">OHJAAJAT
           </a>
           <a <?php if ($address == "contacts") echo $active; ?>
-              href="/<?= $env['app_dir'] ?>/contacts/feedback.php" 
-              class="nav-item nav-link">OTA YHTEYTTÄ
+             href="/<?= $env['app_dir'] ?>/contacts/feedback.php" 
+             class="nav-item nav-link">OTA YHTEYTTÄ
           </a>
-          <a <?php if ($address == "timetable") echo $active; ?> 
-               href="/<?= $env['app_dir'] ?>/customers/timetable.php" 
+          <?php
+          if (isset($_SESSION['admin']) && $_SESSION['admin'] != 1) { ?>
+            <a <?php if ($address == "timetable") echo $active; ?> 
+               href="/<?= $env['app_dir'] ?>/customers/timetable.php"
                class="nav-item custom-link">VARAA AIKA
-          </a>
+            </a>
+          <?php
+          } ?>
           <?php
           if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1) {
           ?>
-              <a <?php if ($address == "new_workout") echo $active; ?>
-               href="/<?= $env['app_dir'] ?>/admin/new_workout.php">Uusi harjoitelu
-               </a>
+            <a <?php if ($address == "new_workout") echo $active; ?> 
+               href="/<?= $env['app_dir'] ?>/admins/new_change_workout.php">Uusi harjoitelu
+            </a>
           <?php
           } ?>
 
@@ -94,21 +99,22 @@ if (isset($_COOKIE['user_id'])) {
 
         <div class="navbar-nav">
           <a <?php if ($address == "cart") echo $active; ?> 
-              href="/<?= $env['app_dir'] ?>/cart/cart.php" 
-              class="nav-item nav-link"><i class="bi bi-cart"></i>
+             href="/<?= $env['app_dir'] ?>/cart/cart.php" 
+             class="nav-item nav-link"><i class="bi bi-cart"></i>
           </a>
 
-          <?php if (isset($_SESSION['admin'])) { 
-            ?>
+          <?php if (isset($_SESSION['admin'])) {
+          ?>
+            
             <a <?php if ($address == "logout") echo $active; ?> 
-                href="/<?= $env['app_dir'] ?>/forms/logout.php"
-                class="nav-item nav-link">Kirjaudu ulos
+               href="/<?= $env['app_dir'] ?>/forms/logout.php" 
+               class="nav-item nav-link">Kirjaudu ulos
             </a>
           <?php
-          } else { 
-            ?>
+          } else {
+          ?>
             <a <?php if ($address == "registration") echo $active; ?>
-                href="/<?= $env['app_dir'] ?>/forms/registration.php"
+                href="/<?= $env['app_dir'] ?>/forms/registration.php" 
                 class="nav-item nav-link">Luo tili
             </a>
             <a <?php if ($address == "login") echo $active; ?> 
