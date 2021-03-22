@@ -22,6 +22,7 @@ include('./reg_handler.php');
             <!--<div class="vertical-center">-->
             <!--<div id="inner_reg" class="inner-block">-->
             <form class="custom-form" action="" method="post">
+          
                 <h3>LUO TILI</h3>
 
                 <?php echo $success_msg; ?>
@@ -32,8 +33,9 @@ include('./reg_handler.php');
 
                 <div class="form-group">
                     <label>Nimi</label>
-                    <input type="text" class="form-control" name="user_name" id="user_name" />
-
+                    <input type="text"class="form-control" name="user_name" id="user_name" />
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
                     <?php echo $fNameEmptyErr; ?>
                     <?php echo $f_NameErr; ?>
                 </div>
