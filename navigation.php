@@ -1,3 +1,4 @@
+  
 <?php
 require(__DIR__ . '/forms/db_connection.php');
 $env = parse_ini_file('.env');
@@ -66,6 +67,7 @@ if (isset($_COOKIE['user_id'])) {
 
       <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
         <div class="navbar-nav">
+        <?php if(!isset($_SESSION['admin']) || $_SESSION['admin'] != 1){?>
           <a <?php if ($address == "company") echo $active; ?> 
              href="/<?= $env['app_dir'] ?>/company/company.php" 
              class="nav-item nav-link">MEISTÄ
@@ -74,26 +76,28 @@ if (isset($_COOKIE['user_id'])) {
              href="/<?= $env['app_dir'] ?>/trainers/trainers.php" 
              class="nav-item nav-link">OHJAAJAT
           </a>
-          <a <?php if ($address == "contacts") echo $active; ?>
+          <a <?php if ($address == "feedback") echo $active; ?>
              href="/<?= $env['app_dir'] ?>/contacts/feedback.php" 
              class="nav-item nav-link">OTA YHTEYTTÄ
           </a>
-          <?php
-          if (isset($_SESSION['admin']) && $_SESSION['admin'] != 1) { ?>
+             <?php if( isset($_SESSION['user_id']) && $_SESSION['trainer']!=1) {?>
             <a <?php if ($address == "timetable") echo $active; ?> 
                href="/<?= $env['app_dir'] ?>/customers/timetable.php"
                class="nav-item custom-link">VARAA AIKA
             </a>
           <?php
-          } ?>
-          <?php
-          if (isset($_SESSION['admin']) && $_SESSION['admin'] == 1) {
-          ?>
+             }
+          } else { ?>
             <a <?php if ($address == "new_workout") echo $active; ?> 
-               href="/<?= $env['app_dir'] ?>/admins/new_change_workout.php">Uusi harjoitelu
+               href="/<?= $env['app_dir'] ?>/admins/new_change_workout.php"class="nav-item nav-link">UUSI HARJOITELU
             </a>
+            <a <?php if ($address == "new_workout") echo $active; ?> 
+               href=""class="nav-item nav-link">UUSI OHJAAJA
+            </a>
+
           <?php
-          } ?>
+          } 
+          ?>
 
         </div>
 
@@ -104,8 +108,27 @@ if (isset($_COOKIE['user_id'])) {
           </a>
 
           <?php if (isset($_SESSION['admin'])) {
-          ?>
-            
+          
+              if($_SESSION['admin']==1){?>
+                <a <?php if ($address == "admin_page") echo $active; ?> 
+               href="/<?= $env['app_dir'] ?>/admins/admin_page.php" 
+               class="nav-item nav-link"><i class="bi bi-person-check" style="font-size:18px;"></i>
+            </a>
+            <?php
+              }elseif($_SESSION['trainer']==1){ ?>
+               <a <?php if ($address == "trainer_page") echo $active; ?> 
+               href="/<?= $env['app_dir'] ?>/trainers/trainer_page.php" 
+               class="nav-item nav-link"><i class="bi bi-person-check" style="font-size:18px;"></i>
+            </a>
+             <?php
+              } else{ ?>
+              <a <?php if ($address == "client_page") echo $active; ?> 
+               href="/<?= $env['app_dir'] ?>/customers/client_page.php" 
+               class="nav-item nav-link"><i class="bi bi-person-check" style="font-size:18px;"></i>
+            </a>
+            <?php
+              }
+            ?>
             <a <?php if ($address == "logout") echo $active; ?> 
                href="/<?= $env['app_dir'] ?>/forms/logout.php" 
                class="nav-item nav-link">Kirjaudu ulos
