@@ -85,8 +85,8 @@ global $fNameEmptyErr, $emailEmptyErr, $passwordEmptyErr, $password_2_EmptyErr, 
 
                             // Create the Transport
                             $transport = (new Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl'))
-                                ->setUsername('lyubov.ivkina@gmail.com')
-                                ->setPassword('Ivki.bov2910');
+                                ->setUsername($env['swift_username'])
+                                ->setPassword($env['swift_password']);
 
                             // Create the Mailer using your created Transport
                             $mailer = new Swift_Mailer($transport);
