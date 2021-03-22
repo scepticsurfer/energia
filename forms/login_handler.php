@@ -4,10 +4,10 @@
 //if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 //die('only post');
 //}
-if (isset($_SESSION['loggedIn'])) {
+/*if (isset($_SESSION['loggedIn'])) {
   header('Location: y_tili.php');
   die();
-}
+}*/
 
 global $wrongPwdErr, $accountNotExistErr, $namePwdErr, $verificationRequiredErr, $name_empty_err, $pass_empty_err;
 
@@ -25,6 +25,7 @@ if (isset($_POST['login'])) {
       $is_active = $row['is_active'];
       $admin = $row['admin'];
       $user_id = $row['id'];
+      $trainer=$row['trainer'];
 
       if ($is_active == '1') {
 
@@ -46,9 +47,17 @@ if (isset($_POST['login'])) {
           $_SESSION['user_id'] = $user_id;
           $_SESSION['admin'] = $admin;
           $_SESSION['last_activity'] = time();
-
-          header('Location: y_tili.php');
+          $_SESSION['trainer']=$trainer;
+          if ($admin==1) {
+          header('Location: ../admins/admin_page.php');
           die();
+          } elseif($trainer==1){
+            header('Location: ../trainers/trainer_page.php');
+            die();
+           }else { 
+            header('Location: ../customers/client_page.php');
+            die();
+           }
         } else {
           $namePwdErr = '<div class="alert alert-danger">
                               Either name or password is incorrect.
@@ -80,3 +89,4 @@ if (isset($_POST['login'])) {
 }
 
 $connect->close();
+
