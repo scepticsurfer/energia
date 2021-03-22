@@ -15,7 +15,7 @@ let populateTrainers = function() {
         let trainerSelect = document.querySelector('#trainer');
         data.forEach(item => {
             // attaching options to select
-            content = `<option value="${item.id}">${item.full_name}</option>`;
+            content = `<option value="${item.id}">${item.name}</option>`;
             trainerSelect.innerHTML += content;
         });
     }).catch(function(err) {

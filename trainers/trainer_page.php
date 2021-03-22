@@ -50,11 +50,8 @@ $env = parse_ini_file('../.env');
                         <th scope="col">Status</th>
                     </tr>
                 </thead>
-                <tbody>
-                       <tr id=timetable_row>
-
-                       </tr>
-
+                <tbody id=timetable_row>
+                       
                     <tbody>
             </table>
         </div>

@@ -90,7 +90,7 @@ include("new_workout_handler.php");
                     <div class="col">
 
 
-                        <select id="trainer" class=form-control name="trainer" value="<?php echo (isset($_GET['trainer_full_name'])) ? $_GET['trainer_full_name'] : "" ?>">
+                        <select id="trainer" class=form-control name="trainer" value="<?php echo (isset($_GET['trainer_name'])) ? $_GET['trainer_name'] : "" ?>">
                             
                            
                         </select>

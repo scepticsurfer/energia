@@ -6,8 +6,8 @@ if (isset($_SESSION['loggedIn'])) {
 
 <div class="row">
     <div class="col-md-3">
-        <a href="client_page.php">Minun harjoitelut</a><br>
-        <a href="reservation.php">Varata aika</a><br>
+        <a href="">Minun harjoitelut</a><br>
+        <a href="">Varata aika</a><br>
         <a href="">Minun tietoa</a>
     </div>
     <div  class="col-md-9">

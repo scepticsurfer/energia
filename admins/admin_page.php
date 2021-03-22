@@ -46,7 +46,7 @@ if ($result->num_rows > 0) { ?>
                             <td>
                                 <a href="http://<?= $env['domain'] ?>/<?= $env['app_dir'] ?>/admins/new_change_workout.php?
                                      workout_id=<?= $row['workout_id'] ?>&date=<?= $row['date'] ?>&time=<?= $row['time'] ?>&
-                                     title=<?= $row['title'] ?>&trainer_full_name=<?= $row['name'] ?>&
+                                     title=<?= $row['title'] ?>&trainer_name=<?= $row['name'] ?>&
                                      free_slots=<?= $row['free_slots'] ?>&status=<?= $row['status'] ?>" class="btn btn-warning">Change
                                 </a>
                             </td>
