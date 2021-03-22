@@ -1,4 +1,3 @@
-  
 <?php
 require(__DIR__ . '/forms/db_connection.php');
 $env = parse_ini_file('.env');
