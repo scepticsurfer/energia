@@ -1,5 +1,5 @@
 <?php
-$env = parse_ini_file('../.env');
+$env = parse_ini_file(__DIR__ . '/../.env');
 function debuggeri($arvo)
 {
     if (!defined('DEBUG') || !DEBUG) {
