@@ -1,6 +1,4 @@
 <?php
-
-
 $error = [
     "date_error" => "", "time_error" => "", "workout_exist" => "",
     "add_error" => "", "add_success" => "", "empty_error" => "", "change_error" => "", "change_success" => ""

@@ -27,7 +27,8 @@ let workoutsAvailableble = function(event) {
                        <td>${item.title}</td>
                        <td>${item.trainer}</td>
                        <td>${item.free_slots}</td>
-                       <td><a id="reserv" href="#">Reserv</a></td>
+                       <td><a href="" class="btn btn-warning">Varata
+                    </a></td>
                        
                        </tr>
             `;

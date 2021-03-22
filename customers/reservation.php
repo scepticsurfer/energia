@@ -2,7 +2,9 @@
 include("../navigation.php");
 
 if (isset($_SESSION['loggedIn'])) {
-} ?>
+} 
+
+?>
 
 <div class="row">
     <div class="col-md-3">
@@ -12,20 +14,20 @@ if (isset($_SESSION['loggedIn'])) {
     </div>
     <div class="col-md-9">
         <div class="col-md-9">
-            <form class="form-inline justify-content-center" action="" method="get">
+            <form class="form-inline justify-content-center" action="reservation.php" method="get">
 
                 <div class="form-group row">
                     <div class="col">
                         <label>From</label>
                     </div>
                     <div class="col">
-                        <input type="date" class="form-control" name="date_from" id="date_from" />
+                        <input type="date" class="form-control" name="date_from" id="date_from" value="2021-03-01">
                     </div>
                     <div class="col">
                         <label>To</label>
                     </div>
                     <div class="col">
-                        <input type="date" class="form-control" name="date_to" id="date_to" />
+                        <input type="date" class="form-control" name="date_to" id="date_to"value="2021-03-31" />
                     </div>
                     <div class="col">
                         <label>Title</label>
@@ -81,7 +83,7 @@ if (isset($_SESSION['loggedIn'])) {
 
 
                     <div class="col">
-                        <button id="find_available" class="btn btn-primary mb-2">Submit</button>
+                        <button id="find_available" type="submit" name="submit" class="btn btn-primary mb-2">Submit</button>
                     </div>
                 </div>
 

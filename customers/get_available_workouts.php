@@ -26,7 +26,7 @@ if($trainer_id!="" && $workout_id!=""){
     }
 
 
-$query="SELECT `date`,`time`,title,`name`,free_slots,workout_id FROM workouts_timetable
+$query="SELECT `date`,`time`,title,`name`,free_slots,workout_id,title_id, trainer_id FROM workouts_timetable
         LEFT JOIN workout_titles ON workouts_timetable.title_id=workout_titles.id 
         LEFT JOIN users ON workouts_timetable.trainer_id=users.id
         WHERE (`date`>='$date_from' AND `date`<= '$date_to') AND
@@ -49,8 +49,10 @@ if ($result->num_rows > 0) {
         $obj->title = $row['title'];
         $obj->trainer = $row["name"];
         $obj->free_slots = $row["free_slots"];
-        //$obj->workout_id = $row["workout_id"];
-        
+        $obj->title_id = $row["title_id"];
+        $obj->workout_id = $row["workout_id"];
+        $obj->trainer_id = $row["trainer_id"];
+                
         $workouts[] = $obj; 
           
     }
