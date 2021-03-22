@@ -3,6 +3,9 @@ let changeTables = function (event) {
     var element = event.target;
     // console.log(element.tagName);
     if (element.tagName === 'A') {
+        if (element.parentElement.tagName !== 'TD') {
+            return;
+        }
         event.preventDefault();
         let date = element.parentElement.parentElement.children[0].innerHTML
         let time = element.parentElement.parentElement.children[1].innerHTML

@@ -22,6 +22,8 @@ let rezervWorkouts = function(event) {
                        <td>${item.time}</td>
                        <td>${item.title}</td>
                        <td>${item.trainer}</td>
+                       <td><a href="" class="btn btn-warning">Peruttaa
+                    </a></td>
                        </tr>
                        
             `;
