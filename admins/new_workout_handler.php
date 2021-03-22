@@ -6,91 +6,89 @@ global  $fileTooLarge, $formatErr, $fileNotUpload, $uploadErr, $productUploaded,
 //die('only post');
 //}
 if (isset($_POST["submit"])) {
-  $nimi = $yhteys->real_escape_string(strip_tags($_POST["nimi"]));
-  $nimi = filter_var($nimi, FILTER_SANITIZE_STRING);
+  $date = $connect->real_escape_string(strip_tags($_POST["date"]));
+  //$date = filter_var($date, FILTER_SANITIZE_STRING);
 
-  $tuotekuvaus = $yhteys->real_escape_string(strip_tags($_POST["tuotekuvaus"]));
-  $tuotekuvaus = filter_var($tuotekuvaus, FILTER_SANITIZE_EMAIL);
+  $time = $connect->real_escape_string(strip_tags($_POST["time"]));
+  //$time = filter_var($time, FILTER_SANITIZE_STRING);
 
-  $tuotehinta = $yhteys->real_escape_string(strip_tags($_POST["tuotehinta"]));
-  $tuotehinta = floatval(filter_var($tuotehinta, FILTER_SANITIZE_NUMBER_FLOAT));
+  $title = $connect->real_escape_string(strip_tags($_POST["title"]));
+  $title = filter_var($title, FILTER_SANITIZE_STRING);
 
-  $kategoria = $yhteys->real_escape_string(strip_tags($_POST["kategoria"]));
-  $kategoria = filter_var($kategoria, FILTER_SANITIZE_STRING);
+  $trainer_id = $connect->real_escape_string(strip_tags($_POST["trainer"]));
+  $trainer_id = filter_var((int)$trainer_id, FILTER_SANITIZE_NUMBER_INT);
 
-  $uusi_kategoria = $yhteys->real_escape_string(strip_tags($_POST["uusi_kategoria"]));
-  $uusi_kategoria = filter_var($uusi_kategoria, FILTER_SANITIZE_STRING);
+  $free_slots = $connect->real_escape_string(strip_tags($_POST["free_slots"]));
+  $free_slots = filter_var((int)$free_slots, FILTER_SANITIZE_NUMBER_INT);
 
+  $status = $connect->real_escape_string(strip_tags($_POST["status"]));
+  $status = filter_var($status, FILTER_SANITIZE_STRING);
 
-  $target_dir = "uploads/";
-  $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-  // $uploadOk = 1;
-  $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-
-
-  // Check file size
-  if ($_FILES["fileToUpload"]["size"] > 500000) {
-    $fileTooLarge = '
-    <div class="alert alert-danger alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    Sorry, your file is too large.!
-    </div>';
-  } elseif ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-    && $imageFileType != "gif") {
-    $formatErr = '<div class="alert alert-danger alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    Sorry, only JPG, JPEG, PNG & GIF files are allowed.
-    </div>';
-  } elseif (!move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-    $uploadErr = '
-      <div class="alert alert-danger alert-dismissible" role="alert">
-      <button type="button" class="close" data-dismiss="alert">&times;</button>
-      Sorry, there was an error uploading your file.
-      </div>';
-  } else { //______________________Kategoria
-    $query = "SELECT id FROM tuotekategoriat WHERE UPPER(kategoria) = UPPER('$kategoria')";
-    $tulokset = $yhteys->query($query);
-    if ($tulokset->num_rows > 0) {
-      $rivi = $tulokset->fetch_assoc();
-      $kategoria_id = $rivi['id'];
+  if (
+    !empty($date) && !empty($time) && !empty($title) &&
+    !empty($trainer_id) && !empty($free_slots) && !empty($status)
+  ) {
+    if ($date < date("Y-m-d")) {
+      $error['date_error'] = '<div class="alert alert-danger">
+                Date should be today or later.
+               </div>';
     } else {
-      $kategoria_id = 0;
-    }
-    //______________________Uusi kategoria
-    if ($uusi_kategoria) {
-      $query = "SELECT kategoria FROM tuotekategoriat WHERE UPPER(kategoria) = UPPER('$uusi_kategoria')";
-      $tulokset = $yhteys->query($query);
-      if ($tulokset->num_rows == 0) {
-        $query_uusi_kat = "INSERT INTO tuotekategoriat(kategoria) VALUES('$uusi_kategoria')";
-        $tulokset_kat = $yhteys->query($query_uusi_kat);
+      $time_start = '08:00:00'; // sport club is opened at 08:00 AM.
+      $time_finish = '21:00:00'; // sport club is closed at 22:00 and the last workout of day should be started at least an one hour before closing.
+      if ($time < $time_start && $time > $time_finish) {
+        $error['time_error'] = '<div class="alert alert-danger">
+                Sport club is opened 08:00-22:00.
+                The last workout of day should be started at least an one hour before closing.
+               </div>';
+      }      
+      elseif (!isset($_POST['workout_id'])) {
+        $workout_check_query = "SELECT * FROM workouts_timetable 
+          WHERE (title='$title' AND `date`='$date' AND time='$time') OR (`date`='$date' AND time='$time') LIMIT 1";
+        $result = $connect->query($workout_check_query);
+        if ($result->num_rows > 0) {
+          $error['workout_exist'] = '<div class="alert alert-danger">
+                  This or other workout at this date and time already exists.
+                 </div>';
+        } else {
+          $query_add = "INSERT INTO workouts_timetable(`date`, `time`, title,trainer_id,free_slots,`status`)
+                     VALUES ('$date','$time','$title','$trainer_id','$free_slots','$status')";
+          $result_add = $connect->query($query_add);
+          if ($result_add) {
+            $error['add_success'] = '<div class="alert alert-success">
+                  Workout was added successfully.
+                 </div>';
+          } else {
+            $error['add_error'] = '<div class="alert alert-danger">
+                  Sorry!Something is wrong. Workout was not added.
+                 </div>';
+          }
+        }
+      } else {
+        $workout_id = $_POST['workout_id'];
+        $query_change = "UPDATE  workouts_timetable SET `date`='$date', `time`='$time',
+                               title='$title',trainer_id='$trainer_id',free_slots='$free_slots',`status`='$status'
+                       WHERE workout_id='$workout_id'";
+              
+        $result_change = $connect->query($query_change);
+        if ($result_change) {
+          $error['change_success'] = '<div class="alert alert-success">
+                Workout was changed successfully.
+               </div>';
+               
+        } else {
+          $error['change_error'] = '<div class="alert alert-danger">
+                Sorry!Something is wrong. Workout was not changed.
+               </div>';
+        }
       }
-      $query = "SELECT id FROM tuotekategoriat WHERE UPPER(kategoria) = UPPER('$uusi_kategoria')";
-      $tulokset = $yhteys->query($query);
-      $rivi = $tulokset->fetch_assoc();
-      $kategoria_id = $rivi['id'];
     }
-    if ($kategoria_id === 0) {
-      die('no category');
-    }
-    $query_uusi_tuote = "INSERT INTO tuotteet(tuote_nimi, tuote_kuvaus, tuote_kuva, hinta, kategoria_id) 
-    VALUES('$nimi', '$tuotekuvaus', '$target_file', $tuotehinta, $kategoria_id)";
-    $tulokset_uusi = $yhteys->query($query_uusi_tuote);
-
-    if (!$tulokset_uusi) {
-      $productUplErr = '
-    <div class="alert alert-danger alert-dismissible" role="alert">
-    <button type="button" class="close" data-dismiss="alert">&times;</button>
-    Sorry, there was an error uploading your product.
-    </div>';
-    } else {
-      $productUploaded = '
-  <div class="alert alert-success alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert">&times;</button>
-  The product successfuly uploaded.
-  </div>';
-    }
+  } else {
+    $error['empty_error'] = '<div class="alert alert-danger">
+    Fill in all the fields.
+   </div>';
   }
 }
+
 
 
 
