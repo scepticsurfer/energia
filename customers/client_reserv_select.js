@@ -3,7 +3,7 @@ let rezervWorkouts = function(event) {
     event.preventDefault();
 
     // deleting existing options if exist
-    let selectWr = document.querySelectorAll('#rezerv_row > tr');
+    let selectWr = document.querySelectorAll('#reserv_row > tr');
     selectWr.forEach(function(selectWr) {
         selectWr.remove();
     });

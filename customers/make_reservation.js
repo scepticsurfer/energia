@@ -16,24 +16,32 @@ let changeTables = function (event) {
             .then(function (response) {
                 return response.json();
             }).then(function (data) {
-                if (data=="true"){
-                    //alert("Paikka varattu. Tervetuloa harjoiteluun.")
+                if (data.result == "true") {
+                    element.parentElement.parentElement.remove();
                     Swal.fire({
                         title: '',
                         text: 'Paikka varattu. Tervetuloa harjoiteluun!',
                         icon: 'success',
                         confirmButtonText: 'sulkea'
-                      })
+                    })
+                } else {
+                    if (data.existing == "true") {
+                        Swal.fire({
+                            title: '',
+                            text: 'Sinulla on jo harjoitelu tänä aikana',
+                            icon: 'error',
+                            confirmButtonText: 'sulkea'
+                        })
+                    }
+                    else {
+                        Swal.fire({
+                            title: 'Anteeksi! Virhe tapahtui.',
+                            text: 'Yritä myöhemmin uudelleen.',
+                            icon: 'error',
+                            confirmButtonText: 'sulkea'
+                        })
+                    }
                 }
-
-
-                else{Swal.fire({
-                    title: '',
-                    text: 'Sinulla on jo harjoitelu tänä aikana',
-                    icon: 'error',
-                    confirmButtonText: 'sulkea'
-                  })
-                }   
             }).catch(function (err) {
                 console.log(err);
             });

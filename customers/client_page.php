@@ -62,6 +62,7 @@ if (isset($_SESSION['loggedIn'])) {
 </div>
 
 <script type="text/javascript" src="client_reserv_select.js"></script>
+<script type="text/javascript" src="cancel_reservation.js"></script>
 <?php
 
 include("../footer.php");

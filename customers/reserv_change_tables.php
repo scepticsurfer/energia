@@ -27,64 +27,47 @@ $title = filter_var($title, FILTER_SANITIZE_STRING);
 $trainer = $connect->real_escape_string(strip_tags($_GET['trainer']));
 $trainer = filter_var($trainer, FILTER_SANITIZE_STRING);
 
-
-//$workout_id = $connect->real_escape_string(strip_tags($_GET['workout_id']));
-//$workout_id = filter_var($workout_id, FILTER_SANITIZE_STRING);
-
-
+$existing = "false";
+$result = "false";
 
 $query_check = "SELECT id FROM workouts_registration WHERE participant_id='$participant_id' AND `date`='$date' AND `time`='$time'";
 $result_check = $connect->query($query_check);
 
 if ($result_check->num_rows == 0) {
 
-    $query_serch="SELECT workout_id,trainer_id,title_id FROM workouts_timetable WHERE `date`='$date' AND `time`='$time'";
-    $result_serch=$connect->query($query_serch);
+    $query_serch = "SELECT workout_id,trainer_id,title_id FROM workouts_timetable WHERE `date`='$date' AND `time`='$time'";
+    $result_serch = $connect->query($query_serch);
     if ($result_serch->num_rows == 0) {
         var_dump($query_insert);
         var_dump($connect->error);
-        die;
-    } else{
+    } else {
         $row = $result_serch->fetch_assoc();
-        $workout_id=$row['workout_id'];
-        $title_id=$row['title_id'];
-        $trainer_id=$row['trainer_id'];
-        $workout_id=$row['workout_id'];
+        $workout_id = $row['workout_id'];
+        $title_id = $row['title_id'];
+        $trainer_id = $row['trainer_id'];
+        $workout_id = $row['workout_id'];
+       
+        $connect->begin_transaction();
+
+        $query_update = "UPDATE workouts_timetable SET free_slots=free_slots-1 WHERE workout_id='$workout_id'";
+        $result_update = $connect->query($query_update);
+
+        $query_insert = "INSERT INTO workouts_registration(`date`,`time`,title_id,participant_id,trainer_id) 
+                           VALUES ('$date','$time','$title_id','$participant_id','$trainer_id')";
+        $result_insert = $connect->query($query_insert);
+        if ($result_update && $result_insert) {
+            $connect->commit();
+            $result = "true";
+        } else {
+            $connect->rollback();
+        }
     }
-
-    $query_insert = "INSERT INTO workouts_registration(`date`,`time`,title_id,participant_id,trainer_id) 
-                      VALUES ('$date','$time','$title_id','$participant_id','$trainer_id')";
-
-    $result_insert = $connect->query($query_insert);
-    if (!$result_insert) {
-        var_dump($query_insert);
-        var_dump($connect->error);
-        die;
-    }
-
-    $query_update = "UPDATE workouts_timetable SET free_slots=free_slots-1 WHERE workout_id='$workout_id'";
-    $result_update = $connect->query($query_update);
-    if (!$result_update) {
-        var_dump($query_update);
-        var_dump($connect->error);
-        die;
-    }
-   
-   //echo '<script>alert("Paikka varattu. Tervetuloa harjoiteluun.")</script>';
-   $results="true";
-}else{
-    $results="false";
-    //echo '<script>alert("Sinulla on jo harjoitelu tänä aikana.")</script>';}
-
+    
+} else {
+    $existing = "true";
 }
+$reservation = new stdClass();
+$reservation->result = $result;
+$reservation->existing = $existing;
 
-
-/*else{
-    var_dump($query_check);
-    var_dump($connect->error);
-    die;
-}*/
-echo json_encode($results);
-
-//include("../footer.php");
-
+echo json_encode($reservation);
