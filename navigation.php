@@ -44,10 +44,9 @@ if (isset($_COOKIE['user_id'])) {
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/<?= $env['app_dir'] ?>/style/custom.css">
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
   <style>
@@ -68,7 +67,6 @@ if (isset($_COOKIE['user_id'])) {
 
       <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
         <div class="navbar-nav">
-        <?php if(!isset($_SESSION['admin']) || $_SESSION['admin'] != 1){?>
           <a <?php if ($address == "company") echo $active; ?> 
              href="/<?= $env['app_dir'] ?>/company/company.php" 
              class="nav-item nav-link">MEISTÄ
@@ -81,29 +79,10 @@ if (isset($_COOKIE['user_id'])) {
              href="/<?= $env['app_dir'] ?>/contacts/feedback.php" 
              class="nav-item nav-link">OTA YHTEYTTÄ
           </a>
-             <?php if( isset($_SESSION['user_id']) && $_SESSION['trainer']!=1) {?>
-            <a <?php if ($address == "timetable") echo $active; ?> 
-               href="/<?= $env['app_dir'] ?>/customers/timetable.php"
-               class="nav-item custom-link">VARAA AIKA
-            </a>
-          <?php
-             }
-          } else { ?>
-            <a <?php if ($address == "new_workout") echo $active; ?> 
-               href="/<?= $env['app_dir'] ?>/admins/new_change_workout.php"class="nav-item nav-link">UUSI HARJOITELU
-            </a>
-            <a <?php if ($address == "new_workout") echo $active; ?> 
-               href=""class="nav-item nav-link">UUSI OHJAAJA
-            </a>
-
-          <?php
-          } 
-          ?>
-
-        </div>
+          </div>
 
         <div class="navbar-nav">
-          <?php if (isset($_SESSION['admin']) &&$_SESSION['admin']!=1 && $_SESSION['trainer']!=1){?>
+          <?php if ((isset($_SESSION['admin']) && $_SESSION['admin']!=1 && $_SESSION['trainer']!=1) ||!isset($_SESSION['admin'])){?>
           <a <?php if ($address == "cart") echo $active; ?> 
              href="/<?= $env['app_dir'] ?>/cart/cart.php" 
              class="nav-item nav-link"><i class="bi bi-cart"></i>

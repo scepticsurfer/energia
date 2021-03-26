@@ -2,18 +2,10 @@
 include("../navigation.php");
 ?>
 
-<<<<<<< HEAD
-<div class="container-fluid">
-    <p></p>
-
-    <div style="background:#F2E349; padding:1%; font-size:20px;">
-        <h2>KUNTOKLUBI ENERGIA - KUUKAUDEN ERIKOISTARJOUKSIA!</h2>
-=======
 <div class="container-fluid custom-margin-container">
     
     <div class="custom-adds">
         <h2>KUNTOKLUBI ENERGIA - KUUKAUDEN HUIPPUTARJOUKSIA!</h2>
->>>>>>> 9ac7258 (Add files via upload)
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec lectus risus. 
             Vestibulum a sem a nisl feugiat fringilla et eu eros. Pellentesque hendrerit luctus convallis. 
@@ -23,66 +15,6 @@ include("../navigation.php");
             Nam maximus sapien fermentum sapien consectetur ultricies. Nulla consequat nec orci at finibus.
         </p>   
     </div>
-<<<<<<< HEAD
-    <p></p>
-   
-    <!--Row starts-->
-    <div class="row">
-        <div class="col-xl-6">
-            <div class="row">
-                <div class="col-xl-7" style="margin-bottom:3px;"><h2>PILATES 30€/kk</h2></div>
-                <div class="col-xl-5" style="margin-bottom:3px; text-align:right;"><a href="https://www.tutorialrepublic.com" class="custom-cart">OSTAA</a></div>
-            </div>           
-            <img class="custom-product" src="../pics/product.png" alt="">
-        </div>
-        <div class="col-xl-6">
-            <div class="row">
-                <div class="col-xl-7" style="margin-bottom:3px;"><h2>ZUMBA 30€/kk</h2></div>
-                <div class="col-xl-5" style="margin-bottom:3px; text-align:right;"><a href="https://www.tutorialrepublic.com" class="custom-cart">OSTAA</a></div>
-            </div>           
-            <img class="custom-product" src="../pics/product.png" alt="">
-        </div>
-    </div>
-    <!--Row endss-->
-
-    <!--Row starts-->
-    <div class="row">
-        <div class="col-xl-6">
-            <div class="row">
-                <div class="col-xl-7" style="margin-bottom:3px;"><h2>SAUNA 30€/kk</h2></div>
-                <div class="col-xl-5" style="margin-bottom:3px; text-align:right;"><a href="https://www.tutorialrepublic.com" class="custom-cart">OSTAA</a></div>
-            </div>           
-            <img class="custom-product" src="../pics/product.png" alt="">
-        </div>
-        <div class="col-xl-6">
-            <div class="row">
-                <div class="col-xl-7" style="margin-bottom:3px;"><h2>SOLARIUM 30€/kk</h2></div>
-                <div class="col-xl-5" style="margin-bottom:3px; text-align:right;"><a href="https://www.tutorialrepublic.com" class="custom-cart">OSTAA</a></div>
-            </div>           
-            <img class="custom-product" src="../pics/product.png" alt="">
-        </div>
-    </div>
-    <!--Row ends-->
-
-    <!--Row starts-->
-    <div class="row">
-        <div class="col-xl-6">
-            <div class="row">
-                <div class="col-xl-7" style="margin-bottom:3px;"><h2>FYSIOTERAPIA 30€/kk</h2></div>
-                <div class="col-xl-5" style="margin-bottom:3px; text-align:right;"><a href="https://www.tutorialrepublic.com" class="custom-cart">OSTAA</a></div>
-            </div>           
-            <img class="custom-product" src="../pics/product.png" alt="">
-        </div>
-        <div class="col-xl-6">
-            <div class="row">
-                <div class="col-xl-7" style="margin-bottom:3px;"><h2>HIERONTA 30€/kk</h2></div>
-                <div class="col-xl-5" style="margin-bottom:3px; text-align:right;"><a href="https://www.tutorialrepublic.com" class="custom-cart">OSTAA</a></div>
-            </div>           
-            <img class="custom-product" src="../pics/product.png" alt="">
-        </div>
-    </div>
-    <!--Row ends-->
-=======
 
     <p></p>
 
@@ -97,43 +29,19 @@ include("../navigation.php");
                 <div class="col-md-4 order-md-2 mb-4">
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
                     <span class="text-muted">OSTOSKORI</span>
-                    <span class="badge badge-danger badge-pill">3</span>
+                    <span id="amount"  class="badge badge-danger badge-pill"></span>
                 </h4>
-                <ul class="list-group mb-3">
-                    <li class="list-group-item d-flex justify-content-between lh-condensed">
-                    <div>
-                        <h6 class="my-0">Jooga</h6>
-                        <small class="text-muted">Kuukauden pääsykortti joogaryhmälle</small>
-                    </div>                    
-                    <span class="text-muted">30€</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between lh-condensed">
-                    <div>
-                        <h6 class="my-0">Pilates</h6>
-                        <small class="text-muted">Kuukauden pääsykortti pilatesryhmälle</small>
-                    </div>
-                    <span class="text-muted">60€</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between lh-condensed">
-                    <div>
-                        <h6 class="my-0">Zumba</h6>
-                        <small class="text-muted">Kuukauden pääsykortti zumbaryhmälle</small>
-                    </div>
-                    <span class="text-muted">60€</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between bg-light">
-                    <div class="text-success">
-                        <h6 class="my-0">Promo koodi</h6>
-                        <small>ESIMERKKIKOODI</small>
-                    </div>
-                    <span class="text-success">-5€</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between">
-                    <span>YHTEENSÄ (EURO)</span>
-                    <strong>145€</strong>
-                    </li>
+                <ul id="user_cart" class="list-group mb-3">
+                
+                    
                 </ul>                  
-
+                <div>
+               <!--<li class="list-group-item d-flex justify-content-between">-->
+                    <span >YHTEENSÄ (EURO)</span>
+                    <strong id="sum" ></strong>
+                    
+                   <!-- </li>-->
+                </div>
                 <form class="card p-2">
                     <div class="input-group">
                     <input type="text" class="form-control" placeholder="Promo koodi">
@@ -283,23 +191,17 @@ include("../navigation.php");
         </div>
     </div>
     <!--Row ends-->   
->>>>>>> 9ac7258 (Add files via upload)
 
     <div class="custom-space">
     <p></p> 
     </div> 
 
-<<<<<<< HEAD
-    <?php
-    include("../footer.php");
-    ?>
-=======
 </div>  
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="../../assets/js/vendor/popper.min.js"></script>
     <script src="../../dist/js/bootstrap.min.js"></script>
@@ -325,9 +227,8 @@ include("../navigation.php");
           });
         }, false);
       })();
-    </script>
-
+    </script>-->
+    <script type="text/javascript" src="user_cart.js"></script>
 <?php
 include("../footer.php");
 ?>
->>>>>>> 9ac7258 (Add files via upload)
