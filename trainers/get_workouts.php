@@ -3,8 +3,7 @@
 session_start();
 
 if (!isset($_SESSION['trainer']) || $_SESSION['trainer'] == 0) {
-    // TODO: return 403 code
-    die();
+     die();
 }
 
 include("../forms/db_connection.php");   

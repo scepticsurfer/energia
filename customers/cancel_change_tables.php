@@ -1,12 +1,9 @@
 <?php
 
 session_start();
-
-
-//if (!isset($_SESSION['user_id']) || $_SESSION['trainer'] == 1 ||$_SESSION['admin'] == 1 ) {
-// TODO: return 403 code
-//   die();
-//}
+if (!isset($_SESSION['loggedIn']) || $_SESSION['admin']==1 ||$_SESSION['trainer']==1  ) {
+    die;
+    }
 
 include("../forms/db_connection.php");
 

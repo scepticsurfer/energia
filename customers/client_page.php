@@ -1,8 +1,10 @@
 <?php
 include("../navigation.php");
+if (!isset($_SESSION['loggedIn']) || $_SESSION['admin']==1 ||$_SESSION['trainer']==1  ) {
+    die;
+    }
 
-if (isset($_SESSION['loggedIn'])) {
-} ?>
+ ?>
 
 <div class="row">
     <div class="col-md-3">

@@ -103,12 +103,13 @@ if (isset($_COOKIE['user_id'])) {
         </div>
 
         <div class="navbar-nav">
+          <?php if (isset($_SESSION['admin']) &&$_SESSION['admin']!=1 && $_SESSION['trainer']!=1){?>
           <a <?php if ($address == "cart") echo $active; ?> 
              href="/<?= $env['app_dir'] ?>/cart/cart.php" 
              class="nav-item nav-link"><i class="bi bi-cart"></i>
           </a>
-
-          <?php if (isset($_SESSION['admin'])) {
+          <?php } 
+           if (isset($_SESSION['admin'])) {
           
               if($_SESSION['admin']==1){?>
                 <a <?php if ($address == "admin_page") echo $active; ?> 

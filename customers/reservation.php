@@ -1,8 +1,9 @@
 <?php
 include("../navigation.php");
 
-if (isset($_SESSION['loggedIn'])) {
-} 
+if (!isset($_SESSION['loggedIn']) || $_SESSION['admin']==1 ||$_SESSION['trainer']==1  ) {
+    die;
+    }
 
 ?>
 

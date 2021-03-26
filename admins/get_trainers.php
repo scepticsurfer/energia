@@ -2,11 +2,9 @@
 
 session_start();
 
-//if (!isset($_SESSION['admin']) || $_SESSION['admin'] == 0) {
-    // TODO: return 403 code
-//    die();
-//}
-
+if (!isset($_SESSION['admin']) || $_SESSION['admin']!=1) {
+    die;
+    }
 include("../forms/db_connection.php");   
 header('Content-Type: application/json');
 

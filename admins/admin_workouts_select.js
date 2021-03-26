@@ -1,38 +1,41 @@
 
-let workoutsAvailable = function(event) {
+let workoutsAll = function(event) {
     event.preventDefault();
 
     // deleting existing options if exist
-    let selectTd = document.querySelectorAll('#workouts_available > tr');
-    selectTd.forEach(function(selectTd) {
-        selectTd.remove();
+    let tableTrs = document.querySelectorAll('#workouts_all > tr');
+    tableTrs.forEach(function(tableTr) {
+        tableTr.remove();
     });
 
     // fetching available options
-    let url = 'get_available_workouts.php?date_from=' + document.querySelector('#date_from').value + '&date_to=' 
-                                                      + document.querySelector('#date_to').value+ '&workout='
+
+    
+    let url = 'get_workouts_admin.php?date_from=' + document.querySelector('#date_from').value + '&date_to=' 
+                                                      + document.querySelector('#date_to').value+ '&title='
                                                       + document.querySelector('#title').value+ '&trainer='
-                                                      + document.querySelector('#trainer').value
+                                                      + document.querySelector('#trainer').value 
                                                       ;
     fetch(url)
     .then(function(response) {
         return response.json();
     }).then(function(data) {
-        let trSelect = document.querySelector('#workouts_available');
+        let trTable = document.querySelector('#workouts_all');
         data.forEach(item => {               
             // attaching options to select
             content = `<tr>
+                      <td class="d-none">${item.workout_id}</td>
                        <td>${item.date}</td>
                        <td>${item.time}</td>
                        <td>${item.title}</td>
                        <td>${item.trainer}</td>
                        <td>${item.free_slots}</td>
-                       <td><a href="" class="btn btn-warning">Varata
-                    </a></td>
+                       <td>${item.status}</td>
+                       <td><a href="new_change_workout.php?workout_id=${item.workout_id}" class="btn btn-warning">Change</a></td>
                        
                        </tr>
             `;
-            trSelect.innerHTML += content;
+            trTable.innerHTML += content;
         });
     }).catch(function(err) {
         console.log(err);
@@ -40,5 +43,5 @@ let workoutsAvailable = function(event) {
 };
 
 //document.addEventListener('DOMContentLoaded', populateTrainers);
-document.querySelector('#find_available').addEventListener('click', workoutsAvailable);
+document.querySelector('#find_workouts').addEventListener('click', workoutsAll);
 //document.querySelector('#title').addEventListener('change', populateTrainers);

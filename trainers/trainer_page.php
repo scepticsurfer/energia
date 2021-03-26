@@ -2,12 +2,9 @@
 
 include("../navigation.php");
 $env = parse_ini_file('../.env');
-/*if (isset($_SESSION['trainer']) && $_SESSION['trainer'] == 1) {
-    $user_id = $_SESSION['user_id'];
-} else {
-    header('Location:../forms/login.php');
+if (!isset($_SESSION['trainer']) || $_SESSION['trainer'] == 0) {
+    die();
 }
-*/
 ?>
 <form class="form-inline justify-content-center" action="" method="get" >
 
