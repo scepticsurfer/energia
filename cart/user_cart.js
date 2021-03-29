@@ -1,4 +1,5 @@
 
+
 let userCart = function(event) {
     event.preventDefault();
 
@@ -24,11 +25,11 @@ let userCart = function(event) {
                        <h6 class="my-0">${item.product}</h6>
                        <small class="text-muted">${item.description}</small>
                        </div>                    
-                        <span class="text-muted">${item.price}€</span>
+                        <span class="text-muted">${item.price}</span>
                         <input type="number" style="width:50px; height: 20px" value="${item.quantity}"/>
                         <span class="text-muted">${item.sum_product}</span>
-                       <div><a href="" class="btn btn-warning">cancel</a>
-                       <div><a href="" class="btn btn-warning">change</a>
+                        <a href="" class="btn btn-warning">Poista</a>
+                        <a href="" class="btn btn-warning">Muuta</a>
                        </li>
                        
                        

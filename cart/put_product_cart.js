@@ -6,22 +6,29 @@ let changeTables = function (event) {
             return;
         }
         event.preventDefault();
-        
+
         let product_name = element.parentElement.parentElement.children[0].children[0].innerHTML
         let url = 'cart/product_to_cart.php?product_name=' + product_name;
         fetch(url)
             .then(function (response) {
                 return response.json();
             }).then(function (data) {
-                if (data == "true") {
+                if (data.result == "true") {
                     Swal.fire({
                         title: '',
                         text: 'Tuote lisätiin ostoskoriin.',
                         icon: 'success',
                         confirmButtonText: 'sulkea'
                     })
-                } else {                 
-                    
+                } else {
+                    if (data.registration == "false") {
+                        Swal.fire({
+                            title: '',
+                            text: 'Sinun on luotava tili.',
+                            icon: 'warning',
+                            confirmButtonText: 'sulkea'
+                        })
+                    } else {
                         Swal.fire({
                             title: 'Anteeksi! Virhe tapahtui.',
                             text: 'Yritä myöhemmin uudelleen.',
@@ -29,7 +36,8 @@ let changeTables = function (event) {
                             confirmButtonText: 'sulkea'
                         })
                     }
-                
+                }
+
             }).catch(function (err) {
                 console.log(err);
             });

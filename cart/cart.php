@@ -229,6 +229,7 @@ include("../navigation.php");
       })();
     </script>-->
     <script type="text/javascript" src="user_cart.js"></script>
+    <script type="text/javascript" src="change_quantity_sum.js"></script>
 <?php
 include("../footer.php");
 ?>
