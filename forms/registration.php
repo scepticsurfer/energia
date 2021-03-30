@@ -28,7 +28,7 @@ include('./reg_handler.php');
 
                 <div class="form-group">
                     <label>Nimi</label>
-                    <input type="text"class="form-control" name="user_name" id="user_name" />
+                    <input type="text" class="form-control" name="user_name" id="user_name" placeholder="Etunimi Sukunumi"/>
                     <div class="valid-feedback">Oikein.</div>
                     <div class="invalid-feedback">Täytä tämä kenttä.</div>
                     <?php echo $fNameEmptyErr; ?>
@@ -46,7 +46,7 @@ include('./reg_handler.php');
 
                 <div class="form-group">
                     <label>Salasana</label>
-                    <input type="password" class="form-control" name="user_password" id="user_password" />
+                    <input type="password" class="form-control" name="user_password" id="user_password" placeholder="LaLa_vip1"/>
 
                     <?php echo $_passwordErr; ?>
                     <?php echo $passwordEmptyErr; ?>
@@ -54,7 +54,7 @@ include('./reg_handler.php');
 
                 <div class="form-group">
                     <label>Vahvista salasana</label>
-                    <input type="password" class="form-control" name="user_password_2" id="user_password_2" />
+                    <input type="password" class="form-control" name="user_password_2" id="user_password_2" placeholder="LaLa_vip1"/>
 
                     <?php echo $password_2_EmptyErr; ?>
                     <?php echo $passwords_notequal; ?>                    
