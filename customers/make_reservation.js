@@ -28,7 +28,7 @@ let changeTables = function (event) {
                     if (data.existing == "true") {
                         Swal.fire({
                             title: '',
-                            text: 'Sinulla on jo harjoittelu tänä aikana',
+                            text: 'Sinulla on jo treeni tänä aikana',
                             icon: 'error',
                             confirmButtonText: 'Sulje'
                         })

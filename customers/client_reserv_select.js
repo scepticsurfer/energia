@@ -34,7 +34,7 @@ let rezervWorkouts = function(event) {
                        <td>${item.time}</td>
                        <td>${item.title}</td>
                        <td>${item.trainer}</td>
-                       <td><a href="" class="btn btn-danger">Peruuta
+                       <td><a href="" class="btn custom-green-buy">Peruuta
                     </a></td>
                        </tr>                       
                     `;

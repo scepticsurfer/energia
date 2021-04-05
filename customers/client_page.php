@@ -2,7 +2,8 @@
 include("../navigation.php");
 
 if (!isset($_SESSION['loggedIn']) || $_SESSION['admin']==1 || $_SESSION['trainer']==1  ) {
-    die;
+    header("location: ../forms/login.php");  
+    exit; 
     }
 ?>
 
@@ -66,7 +67,9 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['admin']==1 || $_SESSION['trainer
                                 </div>
                             
                                 <div class="form-group justify-content-center col-md-12 mb-4">
-                                <button type="submit" class="btn btn-danger btn-block mt-0" id="client_select">Valitse ajanjakso</button>                           
+                                <button type="submit" class="btn btn-block mt-0 custom-green-buy" id="client_select">Valitse ajanjakso</button> 
+                                
+                                <button type="reset" class="btn btn-block mt-2 custom-outline-button" name="submit" id="">Nollaa kaikki kentät</button> 
                                 </div>
                             
                             </form>

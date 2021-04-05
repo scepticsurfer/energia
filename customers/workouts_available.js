@@ -39,7 +39,7 @@ let workoutsAvailable = function(event) {
                         <td>${item.title}</td>
                         <td>${item.trainer}</td>
                         <td>${item.free_slots}</td>
-                        <td><a href="" class="btn btn-danger">Varaa
+                        <td><a href="" class="btn custom-green-buy">Varaa
                             </a></td>                       
                        </tr>
             `;
