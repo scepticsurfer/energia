@@ -5,24 +5,33 @@ include("navigation.php");
 <div class="container-fluid custom-margin-container">
     
     <div class="custom-adds">
-        <h2>KUNTOKLUBI ENERGIA - KUUKAUDEN HUIPPUTARJOUKSIA!</h2>
-        
+        <div class="row">
+        <div class="col-xl-8">
+        <h2 style="color:#336699;"><b>KUNTOKLUBIN ENERGIA</b> KUUKAUDEN HUIPPUTARJOUKSIA!</h2>
+        <p></p>
         <p>
-            <span class="custom-txt-strong">Osta nyt kuukauden kausikortti ja saa ilmaiseksi 1 tunti personal trainerin kanssa!</span>
-            Etu on tarkoitettu uusille asiakkaille. Sopimus jatkuu tämän jälkeen toistaiseksi voimassa olevana. Tarjous voimassa rajoitetun ajan.
-
+            <span class="custom-txt-strong" style="text-transform:uppercase;">Osta nyt kuukauden kausikortti ja saa ilmaiseksi 1 tunti personal trainerin kanssa!</span><br>
+            Etu on tarkoitettu uusille asiakkaille. Sopimus jatkuu tämän jälkeen toistaiseksi voimassa olevana. Tarjous voimassa rajoitetun ajan. 
+            
             Meidän tilava harjoitteluympäristö antaa sinulle mahdollisuuden monipuoliseen liikunnan harrastamiseen. 
-            Kuntosalitiloja meillä on kaksi. Yksi helpoin laittein varustettu kuntosali <span class="custom-txt-strong">aloittelijoille ja senioreille</span> 
-            sekä toinen, joka on suunniteltu palvelemaan <span class="custom-txt-strong">kokeneemman liikkujan</span> tarpeita. Tämän lisäksi sinulla on useampi 
-            muu liikuntatila sekä ryhmäliikuntatunnit käytössäsi. Hanki <span class="custom-txt-strong">kausikortti kätevästi netistä</span> ja tule tutustumaan!           
+            <span class="custom-txt-strong" style="text-transform:uppercase;">Hanki kausikortti kätevästi netistä ja tule tutustumaan!</span> 
         </p>       
-    </div> 
+        </div> 
+
+        <div class="col-xl-4">
+        <div class="custom-div-adds"><span class="custom-span-adds">UUSILLE ASIAKKAILLE<br></span><h1>1 ILMAINEN TUNTI</h1><span class="custom-span-adds-red">PERSONAL TRAINERIN<br></span><span class="custom-span-adds">KANSSA <i class="bi bi-tag-fill"></i></span></div>
+        </div> 
+        </div>     
+    </div>  
+    
+    
+    
    
     <!--Row starts-->
     <div class="row">
         <div class="col-xl-6">
             <div class="row">
-                <div class="col-xl-7 custom-cart-title-l" ><h2>Pilates</h2></div>
+                <div class="col-xl-7 custom-cart-title-l" ><div class="custom-cart-title-wrap">Pilates</div></div>
                 <div class="col-xl-5 custom-cart-title-r" ><a href="" class="custom-cart">OSTAA</a></div>
             </div>  
             <div class="custom-container"><img class="custom-product" src="pics/pilates.jpeg" alt=""> 
@@ -39,7 +48,7 @@ include("navigation.php");
         </div>
         <div class="col-xl-6">
             <div class="row">
-                <div class="col-xl-7 custom-cart-title-l"><h2>Jooga</h2></div>
+                <div class="col-xl-7 custom-cart-title-l"><div class="custom-cart-title-wrap">Jooga</div></div>
                 <div class="col-xl-5 custom-cart-title-r"><a href="" class="custom-cart">OSTAA</a></div>
             </div>  
             <div class="custom-container"><img class="custom-product" src="pics/jooga.jpeg" alt=""> 
@@ -59,7 +68,7 @@ include("navigation.php");
     <div class="row">
         <div class="col-xl-6">
             <div class="row">
-                <div class="col-xl-7 custom-cart-title-l"><h2>Personal trainer</h2></div>
+                <div class="col-xl-7 custom-cart-title-l"><div class="custom-cart-title-wrap">Personal trainer</div></div>
                 <div class="col-xl-5 custom-cart-title-r"><a href="" class="custom-cart">OSTAA</a></div>
             </div>  
             <div class="custom-container"><img class="custom-product" src="pics/ohjaaja.jpg" alt="">
@@ -74,7 +83,7 @@ include("navigation.php");
         </div>
         <div class="col-xl-6">
             <div class="row">
-                <div class="col-xl-7 custom-cart-title-l"><h2>Hieronta</h2></div>
+                <div class="col-xl-7 custom-cart-title-l"><div class="custom-cart-title-wrap">Hieronta</div></div>
                 <div class="col-xl-5 custom-cart-title-r"><a href="" class="custom-cart">OSTAA</a></div>
             </div>  
             <div class="custom-container"><img class="custom-product" src="pics/hieronta.jpeg" alt=""> 
@@ -94,7 +103,7 @@ include("navigation.php");
     <div class="row">
         <div class="col-xl-6">
             <div class="row">
-                <div class="col-xl-7 custom-cart-title-l"><h2>Zumba</h2></div>
+                <div class="col-xl-7 custom-cart-title-l"><div class="custom-cart-title-wrap">Zumba</div></div>
                 <div class="col-xl-5 custom-cart-title-r"><a href="" class="custom-cart">OSTAA</a></div>
             </div>  
             <div class="custom-container"><img class="custom-product" src="pics/zumba.jpeg" alt="">
@@ -109,7 +118,7 @@ include("navigation.php");
         </div>
         <div class="col-xl-6">
             <div class="row">
-                <div class="col-xl-7 custom-cart-title-l"><h2>Kausikortti</h2></div>
+                <div class="col-xl-7 custom-cart-title-l"><div class="custom-cart-title-wrap">Kausikortti</div></div>
                 <div class="col-xl-5 custom-cart-title-r"><a href="" class="custom-cart">OSTAA</a></div>
             </div>  
             <div class="custom-container"><img class="custom-product" src="pics/kausikortti.jpeg" alt="">

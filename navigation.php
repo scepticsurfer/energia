@@ -7,6 +7,7 @@ $end = substr($page, strrpos($page, "/") + 1);
 $address = substr($end, 0, strpos($end, "."));
 
 $active = "class=\"nav-link active\" ";
+$full = "class=\"custom-cart-full\" ";
 
 session_start();
 
@@ -55,7 +56,7 @@ if (isset($_COOKIE['user_id'])) {
 
 <body class="custom-body">
   
-    <nav class="navbar navbar-expand-md fixed-top navbar-dark" style="opacity:0.9; background: #547980;">
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark custom-navbar-color"> 
       <div id="logo">
       <h1><a href="/<?= $env['app_dir'] ?>/index.php"><span>KUNTOKLUBI ENERGIA</span></a></h1>
       </div>
@@ -82,7 +83,7 @@ if (isset($_COOKIE['user_id'])) {
           
         <div class="navbar-nav">
           <?php if ((isset($_SESSION['admin']) && $_SESSION['admin']!=1 && $_SESSION['trainer']!=1) || !isset($_SESSION['admin'])){?>  
-          <a <?php if ($address == "cart") echo $active; ?> 
+          <a <?php if ($address == "cart") echo $full; ?> 
              href="/<?= $env['app_dir'] ?>/cart/cart.php" 
              class="nav-item custom-cart-link"><i class="bi bi-cart"></i>
           </a>
