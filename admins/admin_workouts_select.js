@@ -46,8 +46,8 @@ let workoutsAll = function(event) {
                        <td>${item.trainer}</td>
                        <td>${item.free_slots}</td>
                        <td>${item.status}</td>
-                       <td><a href="new_change_workout.php?workout_id=${item.workout_id}" class="btn btn-danger">Muokaa</a></td>                
-                       <td><a href="get_participants.php?workout_id=${item.workout_id}" class="btn btn-danger">Osallistujat</a></td>
+                       <td><a href="new_change_workout.php?workout_id=${item.workout_id}" class="btn custom-green-buy">Muokaa</a></td>                
+                       <td><a href="get_participants.php?workout_id=${item.workout_id}" class="btn custom-green-buy">Osallistujat</a></td>
                        </tr>
             `;
             trTable.innerHTML += content;

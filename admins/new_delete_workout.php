@@ -133,7 +133,7 @@ $workout_id = filter_var($workout_id, FILTER_SANITIZE_STRING);
                     </div>
                 </div>
 
-                <button type="submit" name="submit" id="submit" class="btn btn-outline-danger btn-lg btn-block">
+                <button type="submit" name="submit" id="submit" class="btn btn-lg btn-block custom-outline-button">
                     <?php echo (isset($workout_id)) ? "Muokaa" : "Lisää" ?>
                 </button>
 

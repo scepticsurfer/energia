@@ -138,7 +138,8 @@ die;
                                 </div>
                             
                                 <div class="form-group justify-content-center col-md-12 mb-4">
-                                    <button type="submit" name="submit" id="find_workouts" class="btn btn-danger btn-block mt-0" >Selaa treenien aikatauluja</button>                                                           
+                                    <button type="submit" name="submit" id="find_workouts" class="btn btn-block mt-0 custom-green-buy">Selaa treenien aikatauluja</button>    
+                                    <button type="reset" name="submit" id="" class="btn btn-block mt-2 custom-outline-button">Nollaa kaikki kentät</button> 
                                 </div>
                             
                             </form>
