@@ -45,7 +45,7 @@ include("feedback_handler.php");
 
                 </div>
 
-                <button type="submit" name="submit" id="submit" class="btn btn-outline-danger btn-lg btn-block">Ota yhteyttä
+                <button type="submit" name="submit" id="submit" class="btn btn-lg btn-block custom-outline-button">Ota yhteyttä
                 </button>
                 <p></p>
             </form>           
