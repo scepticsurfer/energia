@@ -23,7 +23,7 @@ let changeTables = function (event) {
                     if (data.registration == "false") {
                         Swal.fire({
                             title: '',
-                            text: 'Sinun on luotava tili.',
+                            text: 'Kirjaudu tai luo tili. Se on ilmaista ja vie vain pari minuuttia.',
                             icon: 'warning',
                             confirmButtonText: 'Sulje'
                         })

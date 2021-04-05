@@ -28,7 +28,7 @@ let userCart = function(event) {
                         </li>
                         <li class="list-group-item d-flex justify-content-between lh-condensed">                   
                         <div>
-                            <a href="" class="btn btn-sm btn-block custom-button-link">MUUTA</a>                                                     
+                            <a href="" class="btn btn-sm btn-block custom-green-buy">MUUTA</a>                                                     
                         </div>
                         <div>
                             <input type="number" class="form-control custom-input-number" value="${item.quantity}"/> 
@@ -36,7 +36,7 @@ let userCart = function(event) {
                             <span class="text-muted">${item.sum_product} €</span>                           
                         </div>
                         <div>
-                            <a href="" class="btn btn-sm btn-block custom-button-link">POISTA</a>                            
+                            <a href="" class="btn btn-sm btn-block custom-green-buy">POISTA</a>                            
                         </div>                  
                         </li>
                         </ul>                      
