@@ -60,7 +60,7 @@ include('./reg_handler.php');
                     <?php echo $passwords_notequal; ?>                    
                 </div>
 
-                <button type="submit" name="submit" id="submit" class="btn btn-outline-danger btn-lg btn-block">Luo tili
+                <button type="submit" name="submit" id="submit" class="btn btn-lg btn-block custom-outline-button">Luo tili
                 </button>
                 <p></p>
             </form>

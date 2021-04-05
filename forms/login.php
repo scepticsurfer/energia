@@ -44,7 +44,7 @@ include("login_handler.php");
 
                 <p></p>
 
-                <button type="submit" name="login" id="submit" class="btn btn-outline-danger btn-lg btn-block">Kirjaudu
+                <button type="submit" name="login" id="submit" class="btn btn-lg btn-block custom-outline-button">Kirjaudu
                 </button>
                 <p></p>
             </form>

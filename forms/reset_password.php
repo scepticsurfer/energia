@@ -28,7 +28,7 @@ include("reset_password_handler.php");
                     <input type="email" class="form-control" name="email" id="email" />
                 </div>
             
-                <button type="submit" name="submit" id="submit" class="btn btn-outline-danger btn-lg btn-block">Vaihda salasana
+                <button type="submit" name="submit" id="submit" class="btn btn-lg btn-block custom-outline-button">Vaihda salasana
                 </button>
             </form>
         
