@@ -264,7 +264,7 @@ a.custom-cart:hover{
 @media (max-width: 54em) {
 a.custom-cart{
     display: block;
-    font-size: 150%;
+    font-size: 130%;
     font-weight: bold;
     padding: 2% 5%;
     margin:0;
