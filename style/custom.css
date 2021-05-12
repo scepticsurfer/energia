@@ -714,3 +714,11 @@ a.custom-cart-full{
   }
 }
 
+.custom-background{
+    padding: 2% 2% 1% 2%;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    background: white; /*url(../static/pics/red-pattern.png);*/  
+    box-shadow: 1px 1px 10px 0 rgba(168, 132, 132, 0.1);  
+}
+
