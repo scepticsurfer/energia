@@ -215,6 +215,8 @@ opacity: 0.7;
     /*padding: 2% 1%;*/  
   }
 
+/*WIDE SCREEN----------------------------------------------------------------------*/
+@media (min-width: 54em) {
 .custom-top-right h3{
     color: white;
     font-size: 2em;
@@ -223,7 +225,22 @@ opacity: 0.7;
     padding: 5% 1%;  
     border: 2px solid white; 
     }
-  
+}
+
+/*NARROW SCREEN----------------------------------------------------------------------*/
+@media (max-width: 54em) {
+.custom-top-right h3{
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    background: #99cc99; /*#547980*/
+    padding: 5% 1%;  
+    border: 2px solid white; 
+    }
+}
+
+/*WIDE SCREEN----------------------------------------------------------------------*/
+@media (min-width: 54em) {
 a.custom-cart{
     display: block;
     font-size: 150%;
@@ -239,7 +256,29 @@ a.custom-cart{
 a.custom-cart:hover{
     color: white;
     background: #C82333;    
-} 
+}
+}
+
+
+/*NARROW SCREEN----------------------------------------------------------------------*/
+@media (max-width: 54em) {
+a.custom-cart{
+    display: block;
+    font-size: 100%;
+    font-weight: bold;
+    padding: 2% 5%;
+    margin:0;
+    color: white;
+    background: #F64B4B;
+    text-align: center;
+    text-decoration: none;
+}
+
+a.custom-cart:hover{
+    color: white;
+    background: #C82333;    
+}
+}
 
 .custom-form{
     width: 90%;
@@ -516,12 +555,27 @@ a.custom-button-link:hover{
     text-align:right;    
 }
 
+/*WIDE SCREEN----------------------------------------------------------------------*/
+@media (min-width: 54em) {
 .custom-cart-title-wrap{
     background: white;
     padding-bottom: 1px;
     padding: 1px 0 1px 2%;    
     font-size: 200%;
     font-weight: bold;        
+}
+}
+
+/*NARROW SCREEN----------------------------------------------------------------------*/
+@media (max-width: 54em) {
+.custom-cart-title-wrap{
+    background: white;
+    padding-bottom: 1px;
+    padding: 1px 0 1px 2%;    
+    font-size: 150%;
+    font-weight: bold;  
+    text-align: center;
+}
 }
 
 .custom-serch{
