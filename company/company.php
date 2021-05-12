@@ -67,7 +67,7 @@ include("../navigation.php");
                 </div> 
 
                 <div class="col-xl-8">
-                    <div style="width: 100%"><iframe width="100%" height="270" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
+                    <div class="custom-background" style="width: 100%"><iframe width="100%" height="270" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
                     src="https://maps.google.com/maps?width=600&amp;height=300&amp;hl=en&amp;q=Helsinki,%20Finland+(Energia)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
                     </div>
                         <p></p>             
