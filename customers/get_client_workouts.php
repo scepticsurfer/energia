@@ -12,7 +12,7 @@ header('Content-Type: application/json');
 $user_id=$_SESSION['user_id'];
 $date_from=$_GET['date_from'];
 $date_to=$_GET['date_to'];
-$query="SELECT `date`,`time`,title,`name` FROM workouts_registration 
+$query="SELECT `date`,DATE_FORMAT(time,'%H:%i') AS `time`,title,`name` FROM workouts_registration 
         LEFT JOIN workout_titles ON workouts_registration.title_id=workout_titles.id 
         LEFT JOIN users ON workouts_registration.trainer_id=users.id
         WHERE participant_id='$user_id' AND `date`>='$date_from' AND `date`<= '$date_to'";
