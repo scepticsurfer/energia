@@ -185,6 +185,8 @@ html {background: #F8F9FA;} /* {background: #F8F9FA url("../pics/pattern-TRANSPA
 opacity: 0.7;
 }
 
+/*WIDE SCREEN----------------------------------------------------------------------*/
+@media (min-width: 54em) {
 .custom-image-text {
     color: white;
     font-size: 110%;    
@@ -196,6 +198,23 @@ opacity: 0.7;
     transform: translate(-50%, -50%);
     text-align: center;
   }
+}
+
+/*NARROW SCREEN----------------------------------------------------------------------*/
+@media (max-width: 54em) {
+.custom-image-text {
+    color: white;
+    font-size: 90%;    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
+/*-------------------------------------------------------------------------------------*/
 
 #custom-pilates{
     position: absolute;
