@@ -7,7 +7,7 @@ include("navigation.php");
     <div class="custom-adds">
         <div class="row">
         <div class="col-xl-8">
-        <h2 class="custom-blue-title"><b>KUNTOKLUBIN ENERGIA</b> KUUKAUDEN <span>HUIPPUTARJOUKSIA</span>!</h2>
+        <h2 class="custom-blue-title"><b>KUNTOKLUBIN ENERGIA</b> <span>KUUKAUDEN HUIPPUTARJOUKSIA!</span></h2>
         <p></p>
         <p>
             <span class="custom-txt-strong" style="text-transform:uppercase;">Osta nyt kuukauden kausikortti ja saa ilmaiseksi 1 tunti personal trainerin kanssa!</span><br>
