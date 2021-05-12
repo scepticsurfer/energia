@@ -52,7 +52,7 @@ if ($result_check->num_rows == 0) {
         $query_update = "UPDATE workouts_timetable SET free_slots=free_slots-1 WHERE workout_id='$workout_id'";
         $result_update = $connect->query($query_update);
 
-        $query_insert = "INSERT INTO workouts_registration(`date`,`time`,workout_id,title_id,participant_id,trainer_id) 
+        $query_insert = "INSERT INTO workouts_registration(`date`,DATE_FORMAT(time,'%H:%i') AS `time`,workout_id,title_id,participant_id,trainer_id) 
                            VALUES ('$date','$time','$workout_id','$title_id','$participant_id','$trainer_id')";
         $result_insert = $connect->query($query_insert);
         if ($result_update && $result_insert) {
