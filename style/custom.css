@@ -264,7 +264,7 @@ a.custom-cart:hover{
 @media (max-width: 54em) {
 a.custom-cart{
     display: block;
-    font-size: 130%;
+    font-size: 120%;
     font-weight: bold;
     padding: 2% 5%;
     margin:0;
@@ -438,7 +438,7 @@ margin-bottom: 4%;
     box-shadow: 1px 1px 4px 1px rgba(0,0,0,.1);
 }
 
-/*LOGO FOR A WIDE SCREEN----------------------------------------------------------------------*/
+/*WIDE SCREEN----------------------------------------------------------------------*/
 @media (min-width: 54em) {
 .custom-adds{
     background:white; 
@@ -451,7 +451,7 @@ margin-bottom: 4%;
 }
 }
 
-/*LOGO FOR A NARROW SCREEN----------------------------------------------------------------------*/
+/*NARROW SCREEN----------------------------------------------------------------------*/
 @media (max-width: 54em) {
 .custom-adds{
     background:white; 
