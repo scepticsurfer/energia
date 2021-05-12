@@ -621,3 +621,18 @@ a.custom-cart-full{
       padding-right: 2%;
   }
 
+/*WIDE SCREEN----------------------------------------------------------------------*/
+@media (min-width: 54em) {
+  .custom-blue-title{
+       color: #336699;       
+  }
+}
+
+/*NARROW SCREEN----------------------------------------------------------------------*/
+@media (max-width: 54em) {
+  .custom-blue-title{
+       color: #336699;
+       font-size: 170%;
+  }
+}
+
