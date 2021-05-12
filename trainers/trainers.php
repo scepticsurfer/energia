@@ -24,7 +24,7 @@ include("../navigation.php");
             <div class="card-body">
                 <h5 class="card-title">Jensen Ackles</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec lectus risus. A sem a nisl feugiat fringilla et eu eros.</p>
-                <a href="../forms/login.php" class="btn btn-block btn-sm custom-outline-button">VARAA AIKA</a>
+                <a href="../customers/reservation.php" class="btn btn-block btn-sm custom-outline-button">VARAA AIKA</a>
             </div>
             </div>
         </div>
@@ -34,7 +34,7 @@ include("../navigation.php");
             <div class="card-body">
                 <h5 class="card-title">Carmen Electra</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec lectus risus. A sem a nisl feugiat fringilla et eu eros.</p>
-                <a href="../forms/login.php" class="btn btn-block btn-sm custom-outline-button">VARAA AIKA</a>
+                <a href="../customers/reservation.php" class="btn btn-block btn-sm custom-outline-button">VARAA AIKA</a>
             </div>
             </div>
         </div>
@@ -44,7 +44,7 @@ include("../navigation.php");
             <div class="card-body">
                 <h5 class="card-title">Jared Padalecki</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec lectus risus. A sem a nisl feugiat fringilla et eu eros.</p>
-                <a href="../forms/login.php" class="btn btn-block btn-sm custom-outline-button">VARAA AIKA</a>
+                <a href="../customers/reservation.php" class="btn btn-block btn-sm custom-outline-button">VARAA AIKA</a>
             </div>
             </div>
         </div>
@@ -59,7 +59,7 @@ include("../navigation.php");
             <div class="card-body">
                 <h5 class="card-title">Kit Harington</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec lectus risus. A sem a nisl feugiat fringilla et eu eros.</p>
-                <a href="../forms/login.php" class="btn btn-block btn-sm custom-outline-button">VARAA AIKA</a>
+                <a href="../customers/reservation.php" class="btn btn-block btn-sm custom-outline-button">VARAA AIKA</a>
             </div>
             </div>
         </div>
@@ -69,7 +69,7 @@ include("../navigation.php");
             <div class="card-body">
                 <h5 class="card-title">Lucy Liu</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec lectus risus. A sem a nisl feugiat fringilla et eu eros.</p>
-                <a href="../forms/login.php" class="btn btn-block btn-sm custom-outline-button">VARAA AIKA</a>
+                <a href="../customers/reservation.php" class="btn btn-block btn-sm custom-outline-button">VARAA AIKA</a>
             </div>
             </div>
         </div>
@@ -79,7 +79,7 @@ include("../navigation.php");
             <div class="card-body">
                 <h5 class="card-title">Eva Longoria</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec lectus risus. A sem a nisl feugiat fringilla et eu eros.</p>
-                <a href="../forms/login.php" class="btn btn-block btn-sm custom-outline-button">VARAA AIKA</a>
+                <a href="../customers/reservation.php" class="btn btn-block btn-sm custom-outline-button">VARAA AIKA</a>
             </div>
             </div>
         </div>
@@ -89,7 +89,7 @@ include("../navigation.php");
             <div class="card-body">
                 <h5 class="card-title">Nikolaj Coster-Waldau</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec lectus risus. A sem a nisl feugiat fringilla et eu eros.</p>
-                <a href="../forms/login.php" class="btn btn-block btn-sm custom-outline-button">VARAA AIKA</a>
+                <a href="../customers/reservation.php" class="btn btn-block btn-sm custom-outline-button">VARAA AIKA</a>
             </div>
             </div>
         </div>
