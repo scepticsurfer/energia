@@ -399,6 +399,8 @@ margin-bottom: 4%;
     box-shadow: 1px 1px 4px 1px rgba(0,0,0,.1);
 }
 
+/*LOGO FOR A WIDE SCREEN----------------------------------------------------------------------*/
+@media (min-width: 54em) {
 .custom-adds{
     background:white; 
     padding:1%;
@@ -408,6 +410,22 @@ margin-bottom: 4%;
     border-right:14px solid #F64B4B;
     box-shadow: 1px 1px 4px 1px rgba(0,0,0,.1);
 }
+}
+
+/*LOGO FOR A NARROW SCREEN----------------------------------------------------------------------*/
+@media (max-width: 54em) {
+.custom-adds{
+    background:white; 
+    padding:1%;
+    margin-bottom: 1.1rem; 
+    font-size:20px;
+    text-align: center;	
+    border-left:14px solid #F64B4B;
+    border-right:14px solid #F64B4B;
+    box-shadow: 1px 1px 4px 1px rgba(0,0,0,.1);
+}
+}
+/*-----------------------------------------------------------------------------------------------*/
 
 .custom-shadow{
     box-shadow: 1px 1px 4px 1px rgba(0,0,0,.1);
