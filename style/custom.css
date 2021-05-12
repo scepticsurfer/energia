@@ -23,6 +23,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Bowlby+One+SC&family=Carter+One&family=Dela+Gothic+One&family=Paytone+One&family=Righteous&family=Staatliches&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Blinker:wght@800;900&family=Heebo:wght@900&family=Monoton&family=Paytone+One&display=swap');
 
+/*LOGO FOR A WIDE SCREEN----------------------------------------------------------------------*/
+@media (min-width: 54em) {
 #logo{
 	float:left;
 	height:46px;
@@ -38,7 +40,28 @@
 #logo h1 {font-size: 168%; font-weight:normal;}
 #logo h1 a {display:block; color:#000; text-decoration:none; border: 0px dotted #fff;}
 #logo h1 a span {visibility:hidden;}
+}
 
+/*LOGO FOR A NARROW SCREEN----------------------------------------------------------------------*/
+@media (max-width: 54em) {
+#logo{
+	float:left;
+	height:26px;
+	width:170px; /*controls distance between logo and navigation links*/
+	padding: 0px 0; /*for text*/
+	margin:0; /*logo positioning*/
+	background: transparent url(../pics/i-logo13.png) no-repeat 0px 0px; /*padding around picture*/
+	text-align:left;
+	outline: 0px solid green;
+	}
+	
+/*sets company name hidden from the logo*/	
+#logo h1 {font-size: 200%; font-weight:normal;}
+#logo h1 a {display:block; color:#000; text-decoration:none; border: 0px dotted #fff;}
+#logo h1 a span {visibility:hidden;}
+}
+
+/*-----------------------------------------------------------------------------------------------------------*/
 
 /*.logo{
     font-family: 'Heebo', sans-serif;
