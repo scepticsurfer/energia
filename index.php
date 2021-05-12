@@ -14,7 +14,7 @@ include("navigation.php");
             Etu on tarkoitettu uusille asiakkaille. Sopimus jatkuu tämän jälkeen toistaiseksi voimassa olevana. Tarjous voimassa rajoitetun ajan. 
             
             Meidän tilava harjoitteluympäristö antaa sinulle mahdollisuuden monipuoliseen liikunnan harrastamiseen. 
-            <span class="custom-txt-strong" style="text-transform:uppercase;"><br>Hanki kausikortti kätevästi netistä ja tule tutustumaan!</span> 
+            <span class="custom-txt-strong" style="text-transform:uppercase;">Hanki kausikortti kätevästi netistä ja tule tutustumaan!</span> 
         </p>       
         </div> 
 
