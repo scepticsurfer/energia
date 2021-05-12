@@ -42,7 +42,7 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['admin']==1 || $_SESSION['trainer
                         <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
                             <h6 class="my-0"><a href="reservation.php" class="text-danger">Varaa aika</a></h6>
-                            <small class="text-muted">Varaa ajka ohjaajalle tai ryhmäharjoitteluun</small>
+                            <small class="text-muted">Varaa aika ohjaajalle tai ryhmäharjoitteluun</small>
                         </div>                    
                         </li>                                     
                     </ul>               
