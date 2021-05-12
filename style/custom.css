@@ -603,7 +603,8 @@ a.custom-cart-full{
     font-family: 'Arial Black'; 
     font-size: 120%;
   }
-
+/*WIDE SCREEN----------------------------------------------------------------------*/
+@media (min-width: 54em) {
   .custom-div-adds{
     width:100%; 
     height: auto; 
@@ -612,6 +613,20 @@ a.custom-cart-full{
     padding: 2%;  
     text-align:center;   
   }
+}
+
+/*NARROW SCREEN----------------------------------------------------------------------*/
+@media (max-width: 54em) {
+  .custom-div-adds{
+    width:100%; 
+    height: auto; 
+    background: #99cc99 url(../pics/pattern-TRANSPARENT.png); 
+    opacity: 0.9; 
+    padding: 2%;  
+    text-align:center;
+    font-size: 70%;
+  }
+}
   
   .custom-span-adds-red{
       background: #C82333;
