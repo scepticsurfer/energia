@@ -29,7 +29,7 @@ if($trainer_id!="" && $title_id!=""){
     }
 
 
-    $query = "SELECT workout_id, `date`, `time`,title,`name`,free_slots, `status` FROM workouts_timetable LEFT JOIN workout_titles
+    $query = "SELECT workout_id, `date`, DATE_FORMAT(time,'%H:%i') AS `time`,title,`name`,free_slots, `status` FROM workouts_timetable LEFT JOIN workout_titles
     ON workouts_timetable.title_id=workout_titles.id 
     LEFT JOIN users ON workouts_timetable.trainer_id=users.id WHERE (`date`>='$date_from' AND `date`<= '$date_to') " . "$query_part";
     $result = $connect->query($query);
