@@ -634,5 +634,9 @@ a.custom-cart-full{
        color: #336699;
        font-size: 140%;
   }
+	
+  .custom-blue-title span{       
+       font-size: 100%;
+  }
 }
 
