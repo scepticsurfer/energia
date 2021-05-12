@@ -51,7 +51,7 @@ if (!isset($_SESSION['loggedIn']) || $_SESSION['admin']==1 ||$_SESSION['trainer'
                 </div>
                 
                 <div class="col-md-8 order-md-1">
-                    <h4 class="mb-4 text-success">AJAN VARAUS OHJAAJALLE TAI RYHMÄHARJOITTELUUN</h4>
+                    <h4 class="mb-4 text-success">AJANVARAUS OHJAAJALLE TAI RYHMÄHARJOITTELUUN</h4>
                     <form>
                         <!--Row starts-->
                         <div class="row">
